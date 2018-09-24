@@ -8,6 +8,8 @@ def make_books(title, author, genre, book_id):
         'genre': genre,
     }
     library.append(my_books)
+name = input('What is your name')
+print("Welcome to the library %s." % (name))
    
 book_id = 0
 
@@ -22,10 +24,9 @@ while True:
 
     if interface_book == "R":
         id_check = input("What is the book id")
-        if id_check in book_id:
-            for id_check in library:
-            
-
+        for dictionary in  library:
+            if dictionary['book_id'] == id_check:
+                library.remove(dictionary)
     if interface_book == "C":
         print(library)
 
